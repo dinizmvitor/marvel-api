@@ -1,0 +1,18 @@
+.character--container {
+    width: 1200px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+.character--img {
+    margin-right: 30px;
+}
+.character--img img{
+    width: 400px;
+    height: 400px;
+}
+.character--text { 
+    margin: 5px 0 40px 0;
+}

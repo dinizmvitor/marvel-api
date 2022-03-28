@@ -1,0 +1,12 @@
+.characters--container {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+.characters--container img {
+    width: 400px;
+    height: 400px;
+}
+.characters--container span {
+    margin: 5px 0 40px 0;
+}
