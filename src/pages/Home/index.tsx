@@ -19,9 +19,6 @@ export const Home = () => {
     const [loading, setLoading] = useState(false)
 
     const getAllCharacters = async () => {
-        console.log(characters)
-        console.log(data)
-
         let offset = characters.length
         let response =  await api.get(`characters?offset=${offset}`)
         let total = response.data.data.total
