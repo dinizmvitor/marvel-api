@@ -17,12 +17,13 @@ export const Character = () => {
     const [character, setCharacter] = useState<Character[]>([])
     const { id } = useParams()
 
+    const getCharacter = async () => {
+        let response = await api.get(`/characters/${id}`)
+        setCharacter(response.data.data.results)
+    }
+
     useEffect(() => {
-        api.get(`/characters/${id}`)
-            .then((response) => {
-                setCharacter(response.data.data.results)
-            })
-            .catch(err => console.log(err))
+        getCharacter()
     }, [])
 
     return (
