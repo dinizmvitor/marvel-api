@@ -19,11 +19,10 @@ export const Character = () => {
 
     useEffect(() => {
         api.get(`/characters/${id}`)
-            .then(response => {
+            .then((response) => {
                 setCharacter(response.data.data.results)
-                console.log(response.data.data.results)
             })
-            .catch(err => console.log(err))
+            .catch((err) => console.log(err))
     }, [])
 
     return (

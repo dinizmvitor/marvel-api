@@ -22,17 +22,17 @@ export const Home = () => {
         let offset = characters.length
 
         api.get(`/characters?offset=${offset}`)
-            .then(response => {
+            .then((response) => {
                 let results = response.data.data.results
 
                 setCharacters(characters.concat(results))
             })
-            .catch(err => console.log(err))
+            .catch((err) => console.log(err))
     }
 
     useEffect(() => {
         api.get('/characters')
-            .then(response => {
+            .then((response) => {
                 let total = response.data.data.total
                 setMaxHeros(total)
 
@@ -44,7 +44,7 @@ export const Home = () => {
                     setData(data.concat(characters))
                 }
             })
-            .catch(err => console.log(err))
+            .catch((err) => console.log(err))
     }, [characters])
 
     const handleSearchInput = (e: ChangeEvent<HTMLInputElement>) => {
