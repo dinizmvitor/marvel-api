@@ -1,8 +1,8 @@
 import './index.css'
-import about from '../../assets/menu/about.png'
-import comic from '../../assets/menu/comic.png'
-import hero from '../../assets/menu/hero.png'
-import home from '../../assets/menu/home.png'
+import about from '../../assets/about.png'
+import comic from '../../assets/comic.png'
+import hero from '../../assets/hero.png'
+import home from '../../assets/home.png'
 import { Link } from "react-router-dom"
 
 export const Menu = () => {
@@ -10,16 +10,24 @@ export const Menu = () => {
         <>
             <div className="menu--container">
                 <div className="menu--icon">
-                    <Link to="/"><img src={home} /></Link>
+                    <Link to="/">
+                        <img src={home} />
+                    </Link>
                 </div>
                 <div className="menu--icon">
-                    <Link to="/characters/"><img src={hero} /></Link>
+                    <Link to="/characters">
+                        <img src={hero} />
+                    </Link>
                 </div>
                 <div className="menu--icon">
-                    <img src={comic} />
+                    <Link to="/comics">
+                        <img src={comic} />
+                    </Link>
                 </div>
                 <div className="menu--icon">
-                    <img src={about} />
+                    <Link to="/about">
+                        <img src={about} />
+                    </Link>
                 </div>
             </div>
         </>

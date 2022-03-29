@@ -9,7 +9,7 @@ export const Header = () => {
                     <img src={logo} alt="" />
                 </div>
                 <div className="info">
-                    Lorem ipsum.
+                   Sem idéia.
                 </div>
             </header>
         </>
