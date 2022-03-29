@@ -18,33 +18,26 @@ export const Home = () => {
     const [maxHeros, setMaxHeros] = useState(0)
     const [loading, setLoading] = useState(false)
 
-    const getAllCharacters = () => {
+    const getAllCharacters = async () => {
+        console.log(characters)
+        console.log(data)
+
         let offset = characters.length
+        let response =  await api.get(`characters?offset=${offset}`)
+        let total = response.data.data.total
 
-        api.get(`characters?offset=${offset}`)
-            .then((response) => {
-                let results = response.data.data.results
-
-                setCharacters(characters.concat(results))
-            })
-            .catch((err) => console.log(err))
+        if(characters.length < total) {
+            setLoading(true)
+            setCharacters(characters.concat(response.data.data.results))
+            setMaxHeros(total)
+        } else {
+            setData(characters)
+            setLoading(false)
+        }
     }
 
     useEffect(() => {
-        api.get('characters')
-            .then((response) => {
-                let total = response.data.data.total
-                setMaxHeros(total)
-
-                if (characters.length < maxHeros) {
-                    setLoading(true)
-                    getAllCharacters()
-                } else {
-                    setLoading(false)
-                    setData(data.concat(characters))
-                }
-            })
-            .catch((err) => console.log(err))
+        getAllCharacters()
     }, [characters])
 
     const handleSearchInput = (e: ChangeEvent<HTMLInputElement>) => {

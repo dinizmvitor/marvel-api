@@ -18,11 +18,11 @@ export const Character = () => {
     const { id } = useParams()
 
     useEffect(() => {
-        api.get(`characters/${id}`)
+        api.get(`/characters/${id}`)
             .then((response) => {
                 setCharacter(response.data.data.results)
             })
-            .catch((err) => console.log(err))
+            .catch(err => console.log(err))
     }, [])
 
     return (
