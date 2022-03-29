@@ -26,13 +26,8 @@ export const Character = () => {
             .catch(err => console.log(err))
     }, [])
 
-    const handleCheckButton = () => {
-        
-    }
-
     return (
         <div className="main--single">
-            <button onClick={handleCheckButton}>Check</button>
             {character.map((item, index) => (
                 <div key={index} className="container--single">
                     <div className="img-box">
