@@ -21,7 +21,7 @@ export const Home = () => {
     const getAllCharacters = () => {
         let offset = characters.length
 
-        api.get(`/characters?offset=${offset}`)
+        api.get(`characters?offset=${offset}`)
             .then((response) => {
                 let results = response.data.data.results
 
@@ -31,7 +31,7 @@ export const Home = () => {
     }
 
     useEffect(() => {
-        api.get('/characters')
+        api.get('characters')
             .then((response) => {
                 let total = response.data.data.total
                 setMaxHeros(total)

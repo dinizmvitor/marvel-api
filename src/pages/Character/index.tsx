@@ -18,7 +18,7 @@ export const Character = () => {
     const { id } = useParams()
 
     useEffect(() => {
-        api.get(`/characters/${id}`)
+        api.get(`characters/${id}`)
             .then((response) => {
                 setCharacter(response.data.data.results)
             })
