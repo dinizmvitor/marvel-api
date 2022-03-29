@@ -13,12 +13,12 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    img {
+        width: 300px;
+        height: 120px;
+    }
 }
 
-.logo img {
-    width: 300px;
-    height: 120px;
-}
 .info {
     width: 70%;
     display: flex;
@@ -26,5 +26,5 @@ header {
     justify-content: center;
     align-items: flex-end;
     margin-right: 53px;
-    font-size: 30px;
+    font-size: 15px;
 }

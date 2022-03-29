@@ -1,14 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Lato:wght@400;700&display=swap');
 
-* {
+$font-stack: 'Comic Neue', cursive;
+
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Comic Neue', cursive;
+  font-family: $font-stack;
 }
-.app{
+.app {
   display: flex;
   flex-wrap: wrap;
   margin: 20px 0;
   justify-content: space-around; 
+}
+a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
 }

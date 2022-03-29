@@ -1,4 +1,4 @@
-import './index.css'
+import './index.scss'
 import logo from '../../assets/logo.png'
 
 export const Header = () => {
@@ -9,7 +9,8 @@ export const Header = () => {
                     <img src={logo} alt="" />
                 </div>
                 <div className="info">
-                   Sem idéia.
+                    <h1>Welcome to the Marvel API.</h1>
+                    <small>by Vítor Diniz</small>
                 </div>
             </header>
         </>

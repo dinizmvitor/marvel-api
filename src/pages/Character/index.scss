@@ -1,0 +1,33 @@
+.main--single {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container--single {
+    width: 1000px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+.img-box {
+    margin: 15px;
+    box-shadow: 5px 8px 5px #c9c9c9;
+    background-color: #c9c9c9;
+    img {
+        width: 500px;
+        height: 500px;
+    }
+    span {
+        padding: 15px;
+    }
+}
+.container--description {
+    width: 100%;
+    margin: 20px;
+    box-shadow: 10px 8px 5px #c9c9c9;
+    border-left: 1px solid #ebe8e8;
+    font-size: 20px;
+    h2 {
+      margin: 5px 0 5px 0;
+    }
+}

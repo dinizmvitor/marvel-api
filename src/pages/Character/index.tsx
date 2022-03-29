@@ -1,6 +1,6 @@
-import './index.css'
+import "./index.scss"
 import { useState, useEffect } from "react"
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { api } from "../../services/api"
 
 export type Character = {
@@ -15,33 +15,37 @@ export type Character = {
 
 export const Character = () => {
     const [character, setCharacter] = useState<Character[]>([])
-
     const { id } = useParams()
 
     useEffect(() => {
         api.get(`/characters/${id}`)
             .then(response => {
                 setCharacter(response.data.data.results)
-                console.log(response.data.data)
+                console.log(response.data.data.results)
             })
             .catch(err => console.log(err))
     }, [])
-    
+
+    const handleCheckButton = () => {
+        
+    }
+
     return (
-        <>
-            {character.map((character) => (
-                <div className="character--container">
-                    <div className="character--img">
-                        <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} />
+        <div className="main--single">
+            <button onClick={handleCheckButton}>Check</button>
+            {character.map((item, index) => (
+                <div key={index} className="container--single">
+                    <div className="img-box">
+                        <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`} />
                     </div>
-                    <div className="character--description">
+                    <div className="container--description">
                         <h2>Name:</h2>
-                        <span className="character--text">{character.name}</span>
+                        <span>{item.name}</span>
                         <h2>Description:</h2>
-                        <span className="character--text">{character.description ? character.description : '404 - Not Found!'}</span>
+                        <span>{item.description ? item.description : 'Empty!'}</span>
                     </div>
                 </div>
             ))}
-        </>
+        </div>
     )
 }
