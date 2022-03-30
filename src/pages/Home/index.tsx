@@ -51,7 +51,7 @@ export const Home = () => {
     return (
         <div className="main">
             <div className="search--input">
-                <input type="text" placeholder="Busque por um herói" onChange={handleSearchInput}  />
+                <input type="search" placeholder="Busque por um herói" onChange={handleSearchInput}  />
             </div>
 
             {loading &&
