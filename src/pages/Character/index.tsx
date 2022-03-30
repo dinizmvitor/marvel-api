@@ -37,7 +37,7 @@ export const Character = () => {
                         <h2>Name:</h2>
                         <span>{item.name}</span>
                         <h2>Description:</h2>
-                        <span>{item.description ? item.description : 'Empty!'}</span>
+                        <span>{item.description ? item.description : '404!'}</span>
                     </div>
                 </div>
             ))}
