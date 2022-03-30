@@ -47,7 +47,16 @@
         box-shadow: none;
     }
     .container--description {
+        width: 700px;
         text-align: center;
         box-shadow: none;
+        border: none;
+    }
+}
+@media (max-width: 700px)
+{
+    .container--description {
+        width: 420px;
+        border: none;
     }
 }

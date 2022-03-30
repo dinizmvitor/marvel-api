@@ -51,7 +51,7 @@ export const Home = () => {
     return (
         <div className="main">
             <div className="search--input">
-                <input type="search" onChange={handleSearchInput} />
+                <input type="search" onChange={handleSearchInput}  />
             </div>
 
             {loading &&
