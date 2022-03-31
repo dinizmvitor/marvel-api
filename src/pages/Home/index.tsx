@@ -20,12 +20,13 @@ export const Home = () => {
 
     const getAllCharacters = async () => {
         let offset = characters.length
-        let response =  await api.get(`characters?offset=${offset}`)
+        let response =  await api.get(`/characters?offset=${offset}`)
         let total = response.data.data.total
+        let results = response.data.data.results
 
         if(characters.length < total) {
             setLoading(true)
-            setCharacters(characters.concat(response.data.data.results))
+            setCharacters(characters.concat(results))
             setMaxHeros(total)
         } else {
             setData(characters)
@@ -39,7 +40,7 @@ export const Home = () => {
 
     const handleSearchInput = (e: ChangeEvent<HTMLInputElement>) => {
         let event = e.target.value
-        let filter = characters.filter(item => item.name.toLocaleLowerCase().includes(event))
+        let filter = characters.filter(item => item.name.toLowerCase().includes(event))
 
         if (filter.length > 0) {
             setData(filter)
