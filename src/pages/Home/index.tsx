@@ -39,7 +39,7 @@ export const Home = () => {
     }, [characters])
 
     const handleSearchInput = (e: ChangeEvent<HTMLInputElement>) => {
-        let event = e.target.value
+        let event = e.target.value.toLowerCase()
         let filter = characters.filter(item => item.name.toLowerCase().includes(event))
 
         if (filter.length > 0) {
