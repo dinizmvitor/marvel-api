@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom";
 import { api } from "../../services/api"
 
-export type Character = {
+type Character = {
     id: number;
     name: string;
     description: string;
